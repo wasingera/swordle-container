@@ -1,0 +1,32 @@
+// Visual Studio Code Development Container configuration file
+// https://code.visualstudio.com/docs/remote/devcontainerjson-reference
+{
+    // Docker build instructions
+    "name": "Demo Repo",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            // Visual Studio Code extensions
+            "extensions": [
+                "ms-python.flake8",
+                "ms-python.pylint",
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ],
+            // Visual Studio Code environment configuration
+            "settings": {
+                // Set the default terminal application to bash
+                "#terminal.integrated.defaultProfile.linux#": "/bin/bash",
+                // Set Python configuration for runtime, syntax analysis, and linting
+                "python.analysis.useImportHeuristic": true,
+                "python.formatting.provider": "autopep8",
+                "python.linting.enabled": true,
+                "python.linting.flake8Enabled": true,
+                "python.pythonPath": "/usr/local/bin/python3"
+            }
+        }
+    }
+}
